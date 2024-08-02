@@ -1,0 +1,45 @@
+{
+  "name": "user_profile",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "express": "^4",
+    "@sap/cds-hana": "^2",
+    "@sap/xssec": "^3"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7",
+    "@sap/ux-specification": "^1.120.15"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-user-profile": "cds watch --open user-profile/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/user-profile"
+  ],
+  "cds": {
+    "requires": {
+      "[production]": {
+        "db": "hana",
+        "auth": "xsuaa"
+      },
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "Vishal": {
+            "password": "Jauhari",
+            "roles": [
+              "admin1"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
