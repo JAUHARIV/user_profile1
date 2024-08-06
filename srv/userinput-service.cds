@@ -1,6 +1,6 @@
 using { user_profile as my } from '../db/userdetails';
 
-//service name ::
+//service name ::cls for demo today
 service MyService2 {
   entity Userdet @( restrict: [
     { grant: '*', to: 'admin1' }
